@@ -1,16 +1,23 @@
 package people;
 
 public class Person {
-    String name;
-    int age;
-    char gender;
-    Address address;
+    private String name;
+    private int age;
+    private char gender;
+    private long id;
+    private Address address;
 
     public Person(String name,int a,char g,Address address){
         this.name=name;
         age=a;
         gender=g;
         this.address=address;
+        id=System.currentTimeMillis();//unique value time since coordinated universal time (Jan 1 1970 midnight)
+    }
+
+
+    public long getId() {
+        return id;
     }
 
     public String getName(){
@@ -49,6 +56,7 @@ public class Person {
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
+                ", id=" + id +
                 ", age=" + age +
                 ", gender=" + gender +
                 ", address=" + address +

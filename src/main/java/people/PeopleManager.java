@@ -20,4 +20,15 @@ public class PeopleManager {
             System.out.println(per[i]);
         }
     }
+
+    public Person getPerson(long id)
+    {
+      for (int i = 0; i < counter; i++){
+          if (per[i].getId() == id){ //getId is used because id is a private variable
+              return per[i];
+          }
+
+      }
+      return null;
+    }
 }
